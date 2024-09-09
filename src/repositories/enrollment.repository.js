@@ -29,7 +29,11 @@ enrollmentRepository.create = async (enrollment) => {
   ).exec();
 };
 
-enrollmentRepository.getEnrollments = async (filters, page = 1, limit = 10) => {
+enrollmentRepository.getEnrollments = async (
+  filters,
+  page = 1,
+  limit = 100
+) => {
   const enrollments = await populateEnrollmentData(
     Enrollment.find(filters)
       .skip(page * limit)
@@ -63,7 +67,14 @@ enrollmentRepository.isEnrolled = async (courseId, studentId) => {
     courseId,
     studentId
   );
-  return !!enrollment;
+  return enrollment;
+};
+
+enrollmentRepository.getEnrollmentByStudentId = async (studentId) => {
+  const enrollments = await populateEnrollmentData(
+    Enrollment.find({ student: studentId })
+  ).exec();
+  return enrollments;
 };
 
 module.exports = enrollmentRepository;

@@ -97,4 +97,11 @@ enrollmentService.enrollStudentInCourse = async (
   return enrollment;
 };
 
+enrollmentService.getEnrollmentsByStudentId = async (studentId) => {
+  const enrollments = await enrollmentRepository.getEnrollmentByStudentId(
+    studentId
+  );
+  return enrollments;
+};
+
 module.exports = enrollmentService;
