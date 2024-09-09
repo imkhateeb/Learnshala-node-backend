@@ -37,4 +37,10 @@ courseRouter.post(
   courseController.addSyllabusToCourse
 );
 
+courseRouter.post(
+  "/syllabus/:syllabusId/mark-as-completed",
+  studentValidator,
+  courseController.markSyllabusAsCompleted
+);
+
 module.exports = courseRouter;

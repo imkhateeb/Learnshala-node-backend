@@ -88,6 +88,7 @@ const reviewCourse = async (courseId, reviewData) => {
 const markCourseAsCompleted = async (enrollmentId) => {
   const enrollment = await Enrollment.findById(enrollmentId);
   enrollment.completed = true;
+  enrollment.progress = 100;
   await enrollment.save();
   return enrollment;
 };
@@ -97,7 +98,15 @@ const addSyllabusToCourse = async (courseId, syllabusData) => {
   const course = await Course.findOne({ _id: courseId });
   course.syllabus.push(syllabus._id);
   await course.save();
-  return await populateCourseData(Course.findById(courseId));
+  const updatedCourse = await populateCourseData(Course.findById(courseId));
+  return updatedCourse;
+};
+
+const markSyllabusAsCompleted = async (syllabusId) => {
+  const syllabus = await Syllabus.findById(syllabusId);
+  syllabus.completed = true;
+  await syllabus.save();
+  return syllabus;
 };
 
 const courseRepository = {
@@ -112,6 +121,7 @@ const courseRepository = {
   reviewCourse,
   markCourseAsCompleted,
   addSyllabusToCourse,
+  markSyllabusAsCompleted,
 };
 
 module.exports = courseRepository;

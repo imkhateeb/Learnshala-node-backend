@@ -5,8 +5,8 @@ const getAllUsers = async () => {
   console.log(users);
   return users;
 };
-const getAllInstructors = () => {
-  return User.find({ role: "instructor" });
+const getAllInstructors = async () => {
+  return await User.find({ role: "instructor" });
 };
 const getAllStudents = () => {
   return User.find({ role: "student" });

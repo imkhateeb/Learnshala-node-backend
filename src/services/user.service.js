@@ -7,7 +7,8 @@ const getAllUsers = async (something) => {
   return users;
 };
 const getAllInstructors = async () => {
-  return userRepository.getAllInstructors();
+  const response = await userRepository.getAllInstructors();
+  return response;
 };
 const getAllStudents = async () => {
   return userRepository.getAllStudents();

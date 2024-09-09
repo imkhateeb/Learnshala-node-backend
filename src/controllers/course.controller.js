@@ -161,6 +161,21 @@ const addSyllabusToCourse = async (req, res, next) => {
   }
 };
 
+const markSyllabusAsCompleted = async (req, res, next) => {
+  const { syllabusId } = req.params;
+  try {
+    const syllabus = await courseService.markSyllabusAsCompleted(syllabusId);
+    res.status(200).json({
+      status: "success",
+      msg: "Syllabus marked as completed successfully",
+      data: { syllabus },
+      error: {},
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const courseController = {
   createCourse,
   updateCourse,
@@ -171,5 +186,6 @@ const courseController = {
   reviewCourse,
   markCourseAsCompleted,
   addSyllabusToCourse,
+  markSyllabusAsCompleted,
 };
 module.exports = courseController;

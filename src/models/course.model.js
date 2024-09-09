@@ -37,7 +37,7 @@ const courseSchema = new Schema({
   },
   location: {
     type: String,
-    required: true,
+    enum: ["Online", "In-Person"],
     default: "Online",
   },
   prerequisites: {
