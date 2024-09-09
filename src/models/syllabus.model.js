@@ -33,7 +33,7 @@ const syllabusSchema = new Schema({
   },
 });
 
-userSchema.pre("save", function (next) {
+syllabusSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();
 });

@@ -25,6 +25,7 @@ const courseSchema = new Schema({
   },
   thumbnail: {
     type: String,
+    default: null,
   },
   duration: {
     type: Number,
@@ -42,6 +43,10 @@ const courseSchema = new Schema({
   prerequisites: {
     type: [String],
     default: [],
+  },
+  isActive: {
+    type: Boolean,
+    default: true,
   },
   syllabus: [
     {

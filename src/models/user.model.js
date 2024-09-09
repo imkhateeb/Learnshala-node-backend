@@ -22,6 +22,7 @@ const userSchema = new Schema({
   },
   photo: {
     type: String,
+    default: null,
   },
   createdAt: {
     type: Date,

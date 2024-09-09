@@ -26,7 +26,7 @@ const enrollmentSchema = new Schema({
     type: String,
     required: true,
     enum: ["Paid", "Unpaid", "Free"],
-    default: "Unpaid",
+    default: "Free",
   },
   completed: {
     type: Boolean,

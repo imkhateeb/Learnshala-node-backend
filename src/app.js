@@ -19,6 +19,17 @@ app.use("/api", apiRouter);
 app.get("/check", (req, res) => {
   return res.send("Hello World");
 });
+// Unwanted routes
+app.use((req, res) => {
+  res.status(404).json({
+    status: "error",
+    msg: "Route not found",
+    data: {},
+    error: {
+      msg: "Route not found",
+    },
+  });
+});
 
 // Registering Global Error Handler
 app.use(errorHandler);
