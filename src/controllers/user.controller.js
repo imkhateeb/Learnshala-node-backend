@@ -17,9 +17,7 @@ const getUser = async (req, res, next) => {
 
 const getAllUsers = async (req, res, next) => {
   try {
-    console.log(100);
     const response = await userService.getAllUsers();
-    console.log(200);
     res.status(200).json({
       status: "success",
       msg: "Users fetched successfully",

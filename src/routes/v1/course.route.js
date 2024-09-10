@@ -43,4 +43,10 @@ courseRouter.post(
   courseController.markSyllabusAsCompleted
 );
 
+courseRouter.get(
+  "/:courseId/progress",
+  studentValidator,
+  courseController.calculateProgress
+);
+
 module.exports = courseRouter;

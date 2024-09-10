@@ -11,7 +11,6 @@ const addSyllabusToCourse = async (courseId, syllabusData) => {
     syllabusData
   );
 
-  console.log(updatedCourse);
   return updatedCourse;
 };
 module.exports = addSyllabusToCourse;

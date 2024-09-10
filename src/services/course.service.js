@@ -7,7 +7,8 @@ const likeOrUnlikeCourse = require("./course/likeOrUnlikeCoures");
 const markCourseAsCompleted = require("./course/markCourseAsCompleted");
 const reviewCourse = require("./course/reviewCourse");
 const updateCourse = require("./course/updateCourse");
-const markSyllabusAsCompleted = require("./course/markSyllabusAsCompleted")
+const markSyllabusAsCompleted = require("./course/markSyllabusAsCompleted");
+const calculateProgress = require("./course/calculateProgress");
 
 const courseService = {
   getCourses,
@@ -19,7 +20,8 @@ const courseService = {
   getCourseByCourseId,
   markCourseAsCompleted,
   addSyllabusToCourse,
-  markSyllabusAsCompleted
+  markSyllabusAsCompleted,
+  calculateProgress,
 };
 
 module.exports = courseService;

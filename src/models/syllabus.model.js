@@ -19,10 +19,12 @@ const syllabusSchema = new Schema({
     type: String,
     required: true,
   },
-  completed: {
-    type: Boolean,
-    default: false,
-  },
+  completed: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
   resources: {
     type: [String],
     default: [],

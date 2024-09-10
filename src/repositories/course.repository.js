@@ -102,10 +102,16 @@ const addSyllabusToCourse = async (courseId, syllabusData) => {
   return updatedCourse;
 };
 
-const markSyllabusAsCompleted = async (syllabusId) => {
+const markSyllabusAsCompleted = async (syllabusId, userId) => {
   const syllabus = await Syllabus.findById(syllabusId);
-  syllabus.completed = true;
+  syllabus.completed.push(userId);
   await syllabus.save();
+  return syllabus;
+};
+
+const getSyllabusOfACourse = async (courseId) => {
+  const syllabus = await Syllabus.find({ course: courseId });
+
   return syllabus;
 };
 
@@ -122,6 +128,7 @@ const courseRepository = {
   markCourseAsCompleted,
   addSyllabusToCourse,
   markSyllabusAsCompleted,
+  getSyllabusOfACourse,
 };
 
 module.exports = courseRepository;

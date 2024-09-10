@@ -1,9 +1,7 @@
 const { userRepository } = require("../repositories");
 
-const getAllUsers = async (something) => {
-  console.log(something);
+const getAllUsers = async () => {
   const users = await userRepository.getAllUsers();
-  console.log(users);
   return users;
 };
 const getAllInstructors = async () => {
