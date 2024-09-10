@@ -1,6 +1,15 @@
-# Backend Project with Node.js, Express, and MongoDB
+# LearnShala Backend
 
-This project is a backend application built with Node.js, Express, and MongoDB. It provides a robust foundation for building scalable and maintainable web applications.
+This project is a backend application built with Node.js, Express, and MongoDB. It provides a foundation for building scalable and maintainable web applications.
+
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
+![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)
+![Bcrypt](https://img.shields.io/badge/Bcrypt-003A70?style=for-the-badge&logo=lua&logoColor=white)
+![CORS](https://img.shields.io/badge/CORS-FF6C37?style=for-the-badge&logo=CORS&logoColor=white)
+![Dotenv](https://img.shields.io/badge/Dotenv-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black)
 
 ## Table of Contents
 
