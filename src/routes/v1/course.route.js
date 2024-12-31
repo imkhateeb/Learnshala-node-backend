@@ -8,6 +8,7 @@ const {
 } = require("../../validators");
 
 courseRouter.get("/", courseController.getCourses);
+courseRouter.get("/top-courses", courseController.getTopCourses);
 courseRouter.get("/:courseId", courseController.getCourseByCourseId);
 courseRouter.post("/", adminValidator, courseController.createCourse);
 courseRouter.put("/:courseId", adminValidator, courseController.updateCourse);
@@ -48,6 +49,5 @@ courseRouter.get(
   studentValidator,
   courseController.calculateProgress
 );
-courseRouter.get("/top-courses", courseController.getTopCourses);
 
 module.exports = courseRouter;
