@@ -196,6 +196,22 @@ const calculateProgress = async (req, res, next) => {
   }
 };
 
+const getTopCourses = async (req, res, next) => {
+  try {
+    const topCourses = await courseService.getTopCourses();
+    res.status(200).json({
+      status: "success",
+      msg: "Top courses fetched successfully!",
+      data: {
+        topCourses,
+      },
+      error: {},
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const courseController = {
   createCourse,
   updateCourse,
@@ -208,5 +224,6 @@ const courseController = {
   addSyllabusToCourse,
   markSyllabusAsCompleted,
   calculateProgress,
+  getTopCourses
 };
 module.exports = courseController;

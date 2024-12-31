@@ -48,5 +48,6 @@ courseRouter.get(
   studentValidator,
   courseController.calculateProgress
 );
+courseRouter.get("/top-courses", courseController.getTopCourses);
 
 module.exports = courseRouter;

@@ -9,6 +9,7 @@ const reviewCourse = require("./course/reviewCourse");
 const updateCourse = require("./course/updateCourse");
 const markSyllabusAsCompleted = require("./course/markSyllabusAsCompleted");
 const calculateProgress = require("./course/calculateProgress");
+const getTopCourses = require("./course/getTopCourses");
 
 const courseService = {
   getCourses,
@@ -22,6 +23,7 @@ const courseService = {
   addSyllabusToCourse,
   markSyllabusAsCompleted,
   calculateProgress,
+  getTopCourses,
 };
 
 module.exports = courseService;
