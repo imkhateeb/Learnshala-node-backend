@@ -6,6 +6,20 @@ const bodyParser = require("body-parser");
 const apiRouter = require("./routes");
 const errorHandler = require("./utils/errorHandler");
 const connectToDB = require("./config/db.config");
+const rateLimiter = require("express-rate-limit");
+
+const limiter = rateLimiter({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  message: {
+    status: "error",
+    msg: "Too many requests from this IP, please try again after 15 minutes",
+    data: {},
+    error: {
+      msg: "Too many requests from this IP, please try again after 15 minutes",
+    },
+  },
+});
 
 app.use(cors());
 
@@ -15,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 
 // Routes
-app.use("/api", apiRouter);
+app.use("/api", limiter, apiRouter);
 app.get("/check", (req, res) => {
   return res.send("Hello World");
 });
