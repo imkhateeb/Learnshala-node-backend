@@ -24,6 +24,7 @@ const getCourses = async (filters, page = 1, limit = 10) => {
     Course.find(filters)
       .skip((page - 1) * limit)
       .limit(limit)
+      .sort({ createdAt: -1 })
   );
   return response;
 };

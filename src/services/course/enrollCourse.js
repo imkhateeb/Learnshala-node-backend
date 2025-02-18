@@ -28,11 +28,11 @@ const enrollCourse = async (courseId, studentId, enrollmentData) => {
       msg: "Course not found",
     });
   }
-  if (course.enrollmentStatus !== "In Progress") {
-    throw new ConflictError("Course", {
-      msg: "Course is not open for enrollment",
-    });
-  }
+  // if (course.enrollmentStatus !== "In Progress") {
+  //   throw new ConflictError("Course", {
+  //     msg: "Course is not open for enrollment",
+  //   });
+  // }
 
   const enrollment = await enrollmentRepository.getEnrollmentByCourseAndStudent(
     courseId,
